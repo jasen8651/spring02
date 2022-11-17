@@ -14,10 +14,19 @@ public class StringTest {
 		
 		Service svc = null;
 		svc =(Service) context.getBean("svc");
-		svc.prn1();
-		svc.prn1(10);
-		svc.prn1(new Random());
-		svc.prn1(20,30);
+		/*
+		 * svc.prn1(); svc.prn1(10); svc.prn1(new Random()); svc.prn1(20,30);
+		 */
+		
+		svc.prn2();
+		svc.prn3();
+		
+		try {
+			svc.prn4();	
+		}catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		svc.prn5();
 	}
 
 }

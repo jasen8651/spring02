@@ -1,13 +1,17 @@
-package part01;
+package part02_annotation;
 
 import java.util.Random;
 
+import org.aspectj.lang.annotation.AdviceName;
+
 public class ServiceImp implements Service {
+
+
+	
 	public ServiceImp() {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void prn1() {
 		System.out.println("prn");
 	}

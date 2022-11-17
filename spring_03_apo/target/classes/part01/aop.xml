@@ -14,8 +14,20 @@
 			<aop:before method="comm1" pointcut="execution(protected void part01.ServiceImp.prn1())"/>				
 			<aop:before method="comm1" pointcut="execution(public void part01.ServiceImp.prn1(int))"/>
 			<aop:before method="comm1" pointcut="execution(public void part01.ServiceImp.prn1(java.util.Random))"/>
-			<aop:before method="comm1" pointcut="execution(public void part01.ServiceImp.prn1(int,int))"/> -->
-			<aop:before method="comm1" pointcut="execution(* part01.ServiceImp.prn1(..))"/>
+			<aop:before method="comm1" pointcut="execution(public void part01.ServiceImp.prn1(int,int))"/> 
+			<aop:before method="comm1" pointcut="execution(* part01.ServiceImp.prn1(..))"/>-->
+			
+			<aop:pointcut expression="execution(* part01.ServiceImp.prn1(..))" id="aa"/>
+			<aop:pointcut expression="execution(* part01.ServiceImp.prn2(..))"  id="bb"/>
+			<aop:pointcut expression="execution(* part01.ServiceImp.prn3(..))"  id="cc"/>
+			<aop:pointcut expression="execution(* part01.ServiceImp.prn4(..))"  id="dd"/>
+			<aop:pointcut expression="execution(* part01.ServiceImp.prn5(..))"  id="ee"/>
+			
+			<aop:before method="comm1" pointcut-ref="aa"/>
+			<aop:after method="comm2" pointcut-ref="bb"/>
+			<aop:after-returning method="comm3" pointcut-ref="cc" returning="name"/>
+			<aop:after-throwing method="comm4" pointcut-ref="dd" throwing="ex"/>
+			<aop:around method="comm5" pointcut-ref="ee"/>
 		</aop:aspect>
 	</aop:config>
 </beans>
